@@ -1,0 +1,10 @@
+import.java.util.Scanner;
+public class Game{
+Game game;
+game = new Game();
+game.playerSetup();
+}
+
+public void playerSetup(){
+int playerHealth;
+playerHealth = 20;
