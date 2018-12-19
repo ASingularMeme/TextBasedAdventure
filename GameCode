@@ -1,10 +1,29 @@
 import.java.util.Scanner;
+
 public class Game{
+
+Scanner myScanner = new Scanner(System.in);
+Scanner enterScanner = new Scanner(System.in);
+int playerHealth;
+string playerName;
+string playerWeapon;
+int choice;
+
+public static void main(String[] args) {
+
 Game game;
 game = new Game();
 game.playerSetup();
+
 }
 
 public void playerSetup(){
-int playerHealth;
+
 playerHealth = 20;
+playerWeapon = "empty"; 
+System.out.println("Health:" + playerHealth);
+System.out.println("Weapon:" + playerWeapon);
+
+
+
+
