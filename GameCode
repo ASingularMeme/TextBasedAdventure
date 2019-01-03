@@ -7,7 +7,7 @@ Scanner enterScanner = new Scanner(System.in);
 int playerHealth;
 string playerName;
 string playerWeapon;
-int choice;
+char decision;
 
 public static void main(String[] args) {
 
@@ -22,7 +22,25 @@ public void playerSetup(){
 playerHealth = 20;
 playerWeapon = "empty"; 
 System.out.println("Health:" + playerHealth);
-System.out.println("Weapon:" + playerWeapon);
+System.out.println("Weapon:" + playerWeapon); 
+System.out.println("What would you like to be called:"):
+playerName = myScanner.nextLine();
+System.out.println("Hello " + playerName + ", let's begin the game!");
+}
+
+public void Start(){
+System.out.println("You wake up in a small cold room with no windows.");
+System.out.println("You have no recollection of how you got there.");
+System.out.println( "There is only one door that leads south.");
+if (decision == 's')
+{
+  
+}
+public void Room1(){
+
+}
+
+
 
 
 
