@@ -1,7 +1,7 @@
 import.java.util.Scanner;
 
-public class Game{
-
+public class Game
+{
 Scanner myScanner = new Scanner(System.in);
 Scanner enterScanner = new Scanner(System.in);
 int playerHealth;
@@ -9,14 +9,15 @@ string playerName;
 string playerWeapon;
 char decision;
 
-public static void main(String[] args) {
+public static void main(String[] args) 
+{
 
 Game game;
 game = new Game();
 game.playerSetup();
 
 }
-
+//player health and gear
 public void playerSetup(){
 
 playerHealth = 20;
@@ -28,17 +29,61 @@ playerName = myScanner.nextLine();
 System.out.println("Hello " + playerName + ", let's begin the game!");
 }
 
-public void Start(){
+//room section
+public void Start()
+{
+System.out.println("----------------------------------------------------------");
 System.out.println("You wake up in a small cold room with no windows.");
 System.out.println("You have no recollection of how you got there.");
 System.out.println( "There is only one door that leads south.");
-if (decision == 's')
-{
-  
-}
-public void Room1(){
+  if (decision == 's')
+  {
+      Room1();
+  }
+  else
+  {
+  Start();
+  }
+System.out.println("----------------------------------------------------------");
+ 
 
 }
+
+public void Room1()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter the room and see a scrawny old man standing in the corner");
+System.out.println("To his side lies a copper shortsword and a wooden shield.");
+System.out.println("The man appears to have been here for a while and might know what is going on");
+System.out.println("The way you came is from the north and a there is a door that leads west");
+
+if (decision == 'n')
+{
+Start();
+}
+if (decision == 'w')
+{
+Romm2();
+}
+if (decision == 't')
+{
+ System.out.println("Old Man:Welcome to the Dungeon of Despair.");
+ System.out.println("Old Man:Many take the challenge ");
+ System.out.println("Old Man: ");
+ System.out.println("Old Man: ");
+}
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room2()
+{
+
+
+
+
+}
+
 
 
 
