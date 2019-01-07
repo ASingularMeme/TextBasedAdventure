@@ -63,14 +63,16 @@ Start();
 }
 if (decision == 'w')
 {
-Romm2();
+Room2();
 }
 if (decision == 't')
 {
  System.out.println("Old Man:Welcome to the Dungeon of Despair.");
- System.out.println("Old Man:Many take the challenge ");
- System.out.println("Old Man: ");
- System.out.println("Old Man: ");
+ System.out.println("Old Man:You will encounter 4 bosses and defeating the final boss is the only way out of here.  ");
+ System.out.println("Old Man:There are multiple weapons and items scattered throughout the dungeon along with enemies and previous adventurers");
+ //need a scanner or something to update weapon and shield
+ System.out.println("Old Man:Take this copper shortsword and wooden shield. ");
+ Room1();
 }
 
 System.out.println("----------------------------------------------------------");
