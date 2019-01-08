@@ -80,15 +80,161 @@ System.out.println("----------------------------------------------------------")
 
 public void Room2()
 {
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter the room.");
+System.out.println("A small candle illuinates the room.");
+System.out.println("You see a dark figure lingering in the shadows.");
+System.out.println("The way you came is from the west.");
+System.out.println("There is an exit that leads to the south.");
 
 
+System.out.println("----------------------------------------------------------");
+}
+public void Room3()
+{
 
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter a Hallway.");
+System.out.println("There are no windows and small dim torches light the hallway.");
+System.out.println("Cobwebs and moss devour the walls");
+System.out.println("There is a door that leads north back the way you came.");
+System.out.println("The hallway goes east and west");
 
+System.out.println("----------------------------------------------------------");
 }
 
+public void Room4()
+{
+System.out.println("----------------------------------------------------------");
 
 
+System.out.println("----------------------------------------------------------");
+}
 
+public void Room5()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
 
+System.out.println("----------------------------------------------------------");
+}
 
+public void Room6()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
 
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room7()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room8()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room9()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room10()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room11()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room12()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room13()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room14()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room 15()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room16()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room17()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room18()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room19()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
+
+public void Room20()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println();
+
+System.out.println("----------------------------------------------------------");
+}
