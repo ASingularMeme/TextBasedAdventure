@@ -10,6 +10,7 @@ string playerName;
 string monsterName;
 string playerWeapon;
 char decision;
+int key1 = 0;
 
 
 public static void main(String[] args) 
@@ -21,10 +22,13 @@ game.playerSetup();
 
 }
 //player health and gear
-public void playerSetup(){
+public void playerSetup()
+[
 
 playerHealth = 20;
 Ghoul1 = 15;
+Ghoul2 = 15;
+Drowner1 = 17;
 
 playerWeapon = "empty"; 
 System.out.println("Health:" + playerHealth);
@@ -65,6 +69,7 @@ combatR2();
 
 System.out.println("----------------------------------------------------------");
 }
+
 public void combatInitR2()
 {
 System.out.println("----------------------------------------------------------");
@@ -74,6 +79,7 @@ Ghoul1 = Ghoul1 - 2;
 System.out.println("Ghoul Health:" + Ghoul1);
 System.out.println("Would you like to fight back or run away.");
 System.out.println("Health:" + Ghoul1);
+System.out.println("----------------------------------------------------------");
 
 decision = myScanner.nextChar();
 if (decision == 'a')
@@ -89,12 +95,73 @@ else
 combatInitR2();
 }
 
-
-System.out.println("----------------------------------------------------------");
 }
 
+public void combat7D();
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("Ghoul Health:" + Drowner1);
+System.out.println("Would you like to fight or run away.");
+System.out.println("Health:" + Drowner1);
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'a')
+{
+  combatAttackR7D();
+}
+if (decision == 'r');
+{
+   Room7D();
+}
+else
+{
+combatR7D();
+}
+}
 
+public void combat7G();
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("Ghoul Health:" + Ghoul2);
+System.out.println("Would you like to fight or run away.");
+System.out.println("Health:" + Ghoul2);
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'a')
+{
+  combatAttackR7D();
+}
+if (decision == 'r');
+{
+   Room7G();
+}
+else
+{
+combatR7G();
+}
+}
 
+public void combatR13()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("Troll Health:" + troll1);
+System.out.println("Would you like to fight or run away.");
+System.out.println("Health:" + troll1);
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'a')
+{
+  combatAttackR13();
+}
+if (decision == 'r');
+{
+   Room13();
+}
+else
+{
+combatR13();
+}
+}
 
 //combatAttack
 public void combatAttackR2();
@@ -119,16 +186,91 @@ if (playerHealth < 1)
 }
 if (playerHealth > 0)
 {
-combatR2
+combatR2();
+}
+}
 }
 
+public void combatAttackR7G();
+{
+int playerDamage = new java.util.Random().nextInt(5);
+System.out.println("You inflicted" + playerDamage + "damage");
+Ghoul2 = Ghoul2 - playerDamage;
+System.out.println("Monster Health:" + Ghoul2);
+if (Ghoul2 < 1)
+{
+System.out.println("You killed the ghoul!");
+Room7a();
+}
+if (Ghoul2 > 0)
+{
+int monsterDamage = new java.util.Random().nextInt(3);
+playerHealth = playerHealth - monsterDamage;
+System.out.println("The monster inflicted " + monsterDamage + "damage upon to you");
+if (playerHealth < 1)
+{
+ death();
+}
+if (playerHealth > 0)
+{
+combatR7G();
+}
+}
 }
 
-
+public void combatAttackR7D();
+{
+int playerDamage = new java.util.Random().nextInt(5);
+System.out.println("You inflicted" + playerDamage + "damage");
+Drowner1 = Drowner1 - playerDamage;
+System.out.println("Monster Health:" + Drowner1);
+if (Drowner1 < 1)
+{
+System.out.println("You killed the Drowner!");
+Room7a();
+}
+if (Drowner1 > 0)
+{
+int monsterDamage = new java.util.Random().nextInt(4);
+playerHealth = playerHealth - monsterDamage;
+System.out.println("The monster inflicted " + monsterDamage + "damage upon to you");
+if (playerHealth < 1)
+{
+ death();
+}
+if (playerHealth > 0)
+{
+combatR7D();
+}
+}
 }
 
-
-
+public void combatAttackR13();
+{
+int playerDamage = new java.util.Random().nextInt(5);
+System.out.println("You inflicted" + playerDamage + "damage");
+Drowner1 = Drowner1 - playerDamage;
+System.out.println("Monster Health:" + Drowner1);
+if (Drowner1 < 1)
+{
+System.out.println("You killed the Drowner!");
+Room7a();
+}
+if (Drowner1 > 0)
+{
+int monsterDamage = new java.util.Random().nextInt(4);
+playerHealth = playerHealth - monsterDamage;
+System.out.println("The monster inflicted " + monsterDamage + "damage upon to you");
+if (playerHealth < 1)
+{
+ death();
+}
+if (playerHealth > 0)
+{
+combatR7D();
+}
+}
+}
 
 
 //room section
@@ -158,7 +300,7 @@ System.out.println("You enter the room and see a scrawny old man standing in the
 System.out.println("To his side lies a copper shortsword and a wooden shield.");
 System.out.println("The man appears to have been here for a while and might know what is going on");
 System.out.println("The way you came is from the north and a there is a door that leads west");
-
+decision = myScanner.nextChar();
 if (decision == 'n')
 {
 Start();
@@ -172,6 +314,9 @@ if (decision == 't')
  System.out.println("Old Man:Welcome to the Dungeon of Despair.");
  System.out.println("Old Man:You will encounter 4 bosses and defeating the final boss is the only way out of here.  ");
  System.out.println("Old Man:There are multiple weapons and items scattered throughout the dungeon along with enemies and previous adventurers");
+ System.out.println("Here is a copper shortsword and a wooden shield");
+ playerWeapon = "copper shortsword";
+ playerShield = "wooden shield";
  //need a scanner or something to update weapon and shield
  System.out.println("Old Man:Take this copper shortsword and wooden shield. ");
  Room1();
@@ -259,6 +404,7 @@ System.out.println("----------------------------------------------------------")
 System.out.println(You enter the room.);
 System.out.println("The walls are gold plated and the floor is marble");
 System.out.println("The only thing in the room is a chest");
+System.out.println("The only door leads east");
 System.out.println("----------------------------------------------------------");
 decision = myScanner.nextChar();
 if (decision == 'i')
@@ -270,12 +416,16 @@ if(key1 == 1)
 }
 
 }
-else
+if (decision == 'c')
 {
  System.out.println("----------------------------------------------------------");
  System.out.println("The chest is locked");
  System.out.println("----------------------------------------------------------");
  Room5();
+}
+if (decision == 'e')
+{
+Room4();
 }
 }
 
@@ -294,10 +444,119 @@ public void Room7()
 {
 System.out.println("----------------------------------------------------------");
 System.out.println("You enter a room.");
-System.out.println("There is a goblin and a ghoul in the room.");
+System.out.println("There is a Drowner and a Ghoul in the room.");
 System.out.println("Behind them is a corpse with a key wrapped around its neck");
-
 System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'd')
+{
+combat7D();
+}
+if (decision == 'g')
+{
+combat7G();
+}
+if (decision == 'c')
+{
+System.out.println("You need to kill the monsters before you can get the key.");
+Room7();
+}
+if (decision == 'w')
+{
+ Room6();
+}
+else
+{
+Room7();
+}
+}
+
+public void Room7g()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You are in a room.");
+System.out.println("There is a ghoul and the corpse of a Drowner.");
+System.out.println("Behind the ghoul is a corpse with a key wrapped around its neck");
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'g')
+{
+combatAttackRoom7G();
+}
+if (decision == 'c')
+{
+System.out.println("You need to kill the Ghoul before you can get the key.");
+Room7();
+}
+if (decision == 'w')
+{
+Room6();
+}
+else
+{
+Room7g();
+}
+
+}
+public void Room7D()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter a room.");
+System.out.println("There is a Drowner and a corpse of a Ghoul in the room.");
+System.out.println("Behind them is a corpse with a key wrapped around its neck");
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'w')
+{
+combatAttackRoom7D();
+}
+if (decision == 'c')
+{
+System.out.println("You need to kill the Drowner before you can get the key.");
+Room7();
+}
+if (decision == 'w')
+{
+Room6();
+}
+else
+{
+Room7();
+}
+}
+
+public void Room7a()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter a room.");
+System.out.println("The corpse of a ghoul and the corpse of a drowner are in front of you");
+System.out.println("You can now get to the corpse");
+System.out.println("A corpse of a previous explorer is in the corner of the room with a key around his neck.");
+System.out.println("----------------------------------------------------------");
+decision == myScanner.nextChar();
+if (decision == 'c')
+{
+ key1 = key1 + 1;
+ Room7c();
+}
+if (decision == 'w')
+{
+Room6();
+}
+}
+
+public void Room7c()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You enter a room.");
+System.out.println("The corpse of a ghoul and the corpse of a drowner are in front of you");
+System.out.println("A corpse of a previous explorer is in the corner of the room.");
+System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'w')
+{
+Room6();
+}
 }
 
 public void Room8()
@@ -343,9 +602,26 @@ System.out.println("----------------------------------------------------------")
 public void Room13()
 {
 System.out.println("----------------------------------------------------------");
-System.out.println();
-
+System.out.println("You are in a room.");
+System.out.println("Chains hang from the ceiling.");
+System.out.println("A pile of broken weapons and shield is in the far right corner.");
+System.out.println("Blood covers the walls and floor and the stench of rotten corpses fills the air.");
+System.out.println("A troll with brocken shackles stands menancingly in the center of the room.");
+System.out.println("The exit is towards the south.");
 System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 's')
+{
+Room12();
+}
+if (decision == 't')
+{
+comatR13();
+}
+else
+{
+Room13();
+}
 }
 
 public void Room14()
