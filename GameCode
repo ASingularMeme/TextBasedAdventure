@@ -5,9 +5,12 @@ public class Game
 Scanner myScanner = new Scanner(System.in);
 Scanner enterScanner = new Scanner(System.in);
 int playerHealth;
+int monsterHealth;
 string playerName;
+string monsterName;
 string playerWeapon;
 char decision;
+
 
 public static void main(String[] args) 
 {
@@ -21,6 +24,8 @@ game.playerSetup();
 public void playerSetup(){
 
 playerHealth = 20;
+Ghoul1 = 15;
+
 playerWeapon = "empty"; 
 System.out.println("Health:" + playerHealth);
 System.out.println("Weapon:" + playerWeapon); 
@@ -28,6 +33,103 @@ System.out.println("What would you like to be called:"):
 playerName = myScanner.nextLine();
 System.out.println("Hello " + playerName + ", let's begin the game!");
 }
+
+
+
+
+//combatInit
+public void combatR2()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You inspect the shadow and it attacks you!")
+System.out.println("The Ghoul dealt 2 damage");
+playerHealth = playerHealth - 2;
+System.out.println(playerName + "Health:" + playerHealth);
+System.out.println("Would you like to fight back or run away.");
+System.out.println("Health:" + Ghoul1);
+
+decision = myScanner.nextChar();
+if (decision == 'a')
+{
+  combatAttackR2();
+}
+if (decision == 'r');
+{
+   Room2();
+}
+else
+{
+combatR2();
+}
+
+
+System.out.println("----------------------------------------------------------");
+}
+public void combatInitR2()
+{
+System.out.println("----------------------------------------------------------");
+System.out.println("You attack the shadow!")
+System.out.println("You dealt 2 damage");
+Ghoul1 = Ghoul1 - 2;
+System.out.println("Ghoul Health:" + Ghoul1);
+System.out.println("Would you like to fight back or run away.");
+System.out.println("Health:" + Ghoul1);
+
+decision = myScanner.nextChar();
+if (decision == 'a')
+{
+  combatAttackR2();
+}
+if (decision == 'r');
+{
+   Room2();
+}
+else
+{
+combatInitR2();
+}
+
+
+System.out.println("----------------------------------------------------------");
+}
+
+
+
+
+//combatAttack
+public void combatAttackR2();
+{
+int playerDamage = new java.util.Random().nextInt(5);
+System.out.println("You inflicted" + playerDamage + "damage");
+Ghoul1 = Ghoul1 - playerDamage;
+System.out.println("Monster Health:" + Ghoul1);
+if (Ghoul1 < 1)
+{
+System.out.println("You killed the ghoul!");
+Room2();
+}
+if (Ghoul1 > 0)
+{
+int monsterDamage = new java.util.Random().nextInt(3);
+playerHealth = playerHealth - monsterDamage;
+System.out.println("The monster inflicted " + monsterDamage + "damage upon to you");
+if (playerHealth < 1)
+{
+ death();
+}
+if (playerHealth > 0)
+{
+combatR2
+}
+
+}
+
+
+}
+
+
+
+
 
 //room section
 public void Start()
@@ -86,7 +188,20 @@ System.out.println("A small candle illuinates the room.");
 System.out.println("You see a dark figure lingering in the shadows.");
 System.out.println("The way you came is from the west.");
 System.out.println("There is an exit that leads to the south.");
-
+//controls for R2
+decision = myScanner.nextChar();
+if (decision == 'i')
+{
+combatR2();
+}
+if (decision == 'a')
+{
+combatInitR2();
+}
+if (decision == 's')
+{
+Room3();
+}
 
 System.out.println("----------------------------------------------------------");
 }
@@ -94,11 +209,22 @@ public void Room3()
 {
 
 System.out.println("----------------------------------------------------------");
-System.out.println("You enter a Hallway.");
+System.out.println("You are in a Hallway.");
 System.out.println("There are no windows and small dim torches light the hallway.");
 System.out.println("Cobwebs and moss devour the walls");
 System.out.println("There is a door that leads north back the way you came.");
 System.out.println("The hallway goes east and west");
+//controls for R3
+decision = myScanner.nextChar();
+if(choice == e)
+{
+ Room6();
+}
+if (choice == 'w')
+{
+Room3();
+}
+
 
 System.out.println("----------------------------------------------------------");
 }
@@ -106,31 +232,70 @@ System.out.println("----------------------------------------------------------")
 public void Room4()
 {
 System.out.println("----------------------------------------------------------");
-
-
+System.out.println("You are in a a Hallway.");
+System.out.println("There are no windows and small dim torches light the hallway.");
+System.out.println("Cobwebs and moss devour the walls");
+System.out.println("The hallway goes east and to the west is a door");
+decision == myScanner.nextChar();
+if(choice == e)
+{
+ Room3();
+}
+if (choice == 'w')
+{
+Room5();
+}
+else
+{
+Room4();
+}
+}
 System.out.println("----------------------------------------------------------");
 }
 
 public void Room5()
 {
 System.out.println("----------------------------------------------------------");
-System.out.println();
-
+System.out.println(You enter the room.);
+System.out.println("The walls are gold plated and the floor is marble");
+System.out.println("The only thing in the room is a chest");
 System.out.println("----------------------------------------------------------");
+decision = myScanner.nextChar();
+if (decision == 'i')
+{
+if(key1 == 1)
+{
+  System.out.println("In the chest is a iron shortsword");
+  playerWeapon = "iron shortsword"
+}
+
+}
+else
+{
+ System.out.println("----------------------------------------------------------");
+ System.out.println("The chest is locked");
+ System.out.println("----------------------------------------------------------");
+ Room5();
+}
 }
 
 public void Room6()
 {
 System.out.println("----------------------------------------------------------");
-System.out.println();
-
+System.out.println("You are in a hallway");
+System.out.println("Water drips from the ceiling and the echo of the splash can be heard.");
+System.out.println("To the east is a door");
+System.out,println("To the west is the way you came");
+System.out.println("To the south the hallway continues");
 System.out.println("----------------------------------------------------------");
 }
 
 public void Room7()
 {
 System.out.println("----------------------------------------------------------");
-System.out.println();
+System.out.println("You enter a room.");
+System.out.println("There is a goblin and a ghoul in the room.");
+System.out.println("Behind them is a corpse with a key wrapped around its neck");
 
 System.out.println("----------------------------------------------------------");
 }
