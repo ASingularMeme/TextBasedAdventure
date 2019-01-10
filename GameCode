@@ -106,9 +106,9 @@ combatInitR2();
 public void combat7D();
 {
 System.out.println("----------------------------------------------------------");
-System.out.println("Ghoul Health:" + Drowner1);
+System.out.println("Drowner Health:" + Drowner1);
 System.out.println("Would you like to fight or run away.");
-System.out.println("Health:" + Drowner1);
+
 System.out.println("----------------------------------------------------------");
 decision = myScanner.nextChar();
 if (decision == 'a')
@@ -917,3 +917,25 @@ System.out.println(Big Chungus: It is I the Big Chungus!);
 System.out.println("----------------------------------------------------------");
 chungusCombat();
 }
+
+
+
+
+----------------------------------------------------------
+You enter a room
+There is a Drowner and a Ghoul in the room.
+Behind them is a corpse with a key wrapped around its neck.
+East is the exit.
+----------------------------------------------------------
+d
+
+----------------------------------------------------------
+Drowner Health: 17
+Would you like to fight or run away?
+----------------------------------------------------------
+a
+
+----------------------------------------------------------
+You inflicted 5 damage!
+Drowner Health = 12
+----------------------------------------------------------
